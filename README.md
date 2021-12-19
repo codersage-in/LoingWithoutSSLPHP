@@ -24,6 +24,9 @@ find /var/www -type f -exec chmod 0664 {} ;
 
 echo "" > /var/www/html/phpinfo.php
 
+# Go to apache home directory
+cd /var/www/html
+
 # Install git in your EC2 instance
 sudo yum install git -y
 
@@ -31,11 +34,12 @@ sudo yum install git -y
 git clone https://github.com/codersage-in/LoingWithoutSSLPHP.git
 
 # Create a self signed certificate using the following command:
-openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:4096 -keyout private.key -out certificate.crt
+openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:4096 -keyout localhost.key -out localhost.crt
 
-Now that your instance is current, add TLS support by installing the Apache module mod_ssl.
+# Now that your instance is current, add TLS support by installing the Apache module mod_ssl.
 sudo yum install -y mod_ssl
 
-copy the certificate and privite key as follows:
-Create a self signed certificate using the following tutorial:
+# Copy the certificate and privite key file in location mentioned in /etc/httpd/conf.d/ssl.conf as SSLCertificateFile and SSLCertificateKeyFile parameters
+
+
 https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/SSL-on-amazon-linux-2.html
