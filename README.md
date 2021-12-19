@@ -41,5 +41,5 @@ sudo yum install -y mod_ssl
 
 # Copy the certificate and privite key file in location mentioned in /etc/httpd/conf.d/ssl.conf as SSLCertificateFile and SSLCertificateKeyFile parameters
 
-
+# Read the complet tutorial on AWS Docs
 https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/SSL-on-amazon-linux-2.html
