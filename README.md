@@ -36,10 +36,14 @@ git clone https://github.com/codersage-in/LoingWithoutSSLPHP.git
 # Create a self signed certificate using the following command:
 openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:4096 -keyout localhost.key -out localhost.crt
 
-# Now that your instance is current, add TLS support by installing the Apache module mod_ssl.
+# Now add TLS support by installing the Apache module mod_ssl on EC2 instance.
 sudo yum install -y mod_ssl
 
 # Copy the certificate and privite key file in location mentioned in /etc/httpd/conf.d/ssl.conf as SSLCertificateFile and SSLCertificateKeyFile parameters
+
+sudo cp localhost.crt /etc/pki/tls/certs/
+
+sudo cp localhost.key /etc/pki/tls/private/
 
 # Read the complet tutorial on AWS Docs
 https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/SSL-on-amazon-linux-2.html
