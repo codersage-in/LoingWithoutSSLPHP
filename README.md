@@ -31,7 +31,7 @@ cd /var/www/html
 sudo yum install git -y
 
 # Clone the PHP simple login application using the following command
-git clone https://github.com/codersage-in/LoingWithoutSSLPHP
+git clone https://github.com/learnwithparth/LoingWithoutSSLPHP
 
 # Create a self signed certificate using the following command:
 openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:4096 -keyout localhost.key -out localhost.crt
